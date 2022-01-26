@@ -1,0 +1,32 @@
+import  java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner input=new Scanner(System.in);
+        System.out.print("Kaç Adet Fibonnacci Sayısı Görmek İstiyorsunuz? ");
+        int sayi=input.nextInt();
+
+        // serinin ilk iki elemanı 0 ve 1 olduğundan birinci ve ikinciyi değişkenleri atıyoruz
+        int birinci=0;
+        int ikinci=1;
+
+        // serinin mantığı kendinden önceki iki sayının toplamı
+        int ucuncu=birinci+ikinci;
+
+        System.out.println("Fibonacci Sayıları ");
+
+        //tanımladığımız birinci ve ikinci fib sayılarını yazdırıypruz
+        System.out.print(birinci+" " +ikinci+ " ");
+
+        //sayıdan 2 çıkarmazsak değişken atadığımız iki fib sayısını toplam sayıda ekstra olarak gösterir
+        //while(sayi>0) olarak yaparsak ilk 2 elemanı yazar devamında 5 eleman daha yazar
+        while(sayi-2>0){
+            System.out.print(ucuncu+ " ");
+            sayi--;
+            birinci=ikinci;
+            ikinci=ucuncu;
+            ucuncu=birinci+ikinci;
+        }
+    }
+}
